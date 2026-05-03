@@ -1,144 +1,197 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;500&display=swap');
+
+/* ---------- BASE ---------- */
 body {
-  font-family: "Inter", "Segoe UI", sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  font-family: "Inter", sans-serif;
+  background: #020617;
+  color: #86ceff;
   margin: 0;
-  padding: 20px;
+  padding: 24px;
 }
- 
+
+.container {
+  max-width: 950px;
+  margin: auto;
+}
+
+/* ---------- TITLE ---------- */
 h1 {
+  font-family: "Orbitron", sans-serif;
   text-align: center;
-  font-size: 38px;
-  color: #e2e8f0;
-  margin-bottom: 25px;
-  letter-spacing: 0.5px;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #61f4ff;
+  text-shadow: 0 0 8px rgba(56,189,248,0.5);
 }
- 
+
+/* ---------- STATS ---------- */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.stats p {
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #94a3b8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* neon underline animation */
+.stats p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  transition: 0.3s;
+}
+
+.stats p:hover::after {
+  width: 100%;
+}
+
+/* ---------- FORM ---------- */
 form {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 25px;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
- 
+
 form input {
-  padding: 12px;
-  width: 220px;
+  padding: 14px;
+  width: 240px;
   border-radius: 8px;
-  border: 1px solid #334155;
+  border: 1px solid #1e293b;
   background: #020617;
   color: #e2e8f0;
   outline: none;
+  transition: 0.2s;
 }
 
 form input:focus {
-  border-color: #3b82f6;
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56,189,248,0.5);
 }
-     
+
+/* ---------- BUTTON ---------- */
 button {
-  padding: 12px 18px;
+  padding: 14px 20px;
   border-radius: 8px;
   border: none;
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
-  font-weight: 500;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 button:hover {
-  background: #2563eb;
+  background: #38bdf8;
+  color: #020617;
+  box-shadow: 0 0 10px #38bdf8;
 }
- 
+
+/* ---------- TABLE ---------- */
 table {
-  width: 90%;
-  margin: auto;
-  border-collapse: collapse;
-  background: #020617;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-  
-th {
+  border: 1px solid #1e293b;
   background: #020617;
-  color: #94a3b8;
-  padding: 14px;
-  font-weight: 500;
+}
+
+/* header */
+th {
+  padding: 18px;
+  text-align: left;
+  color: #64748b;
   border-bottom: 1px solid #1e293b;
 }
- 
+
+/* rows */
 td {
-  padding: 14px;
-  text-align: center;
-  border-bottom: 1px solid #1e293b;
+  padding: 20px;
+  border-bottom: 1px solid #0f172a;
 }
- 
+
+/* hover row */
+tr:hover {
+  background: #0b1220;
+}
+
+/* ---------- SCORE INPUT ---------- */
 td input {
-  padding: 8px;
-  width: 100px;
+  padding: 10px;
+  width: 110px;
   border-radius: 6px;
-  border: 1px solid #334155;
-  background: #0f172a;
+  border: 1px solid #1e293b;
+  background: #020617;
   color: #e2e8f0;
   text-align: center;
 }
 
 td input:focus {
-  border-color: #3b82f6;
+  border-color: #38bdf8;
+  box-shadow: 0 0 6px #38bdf8;
 }
- 
+
+/* ---------- SAVE BUTTON ---------- */
 .save-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
   background: #1e293b;
   color: #e2e8f0;
-  border-radius: 6px;
-  padding: 6px 14px;
-  border: none;
-  transition: 0.2s;
+  position: relative;
+  overflow: hidden;
 }
- 
+
+/* underline glow */
+.save-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  transition: 0.3s;
+}
+
+.save-btn:hover::after {
+  width: 100%;
+}
+
+/* hover */
 .save-btn:hover:not(:disabled) {
-  background: #93c5fd;    
-  color: #020617;
- font-style: oblique;
+  color: #38bdf8;
 }
- 
+
+/* saved → turquoise glow */
 .save-btn:disabled {
-  background: #16695e;   
-  color: #000000;
-  cursor: not-allowed;
-  font-style: oblique;
+  background: #2dd4bf;
+  color: #022c22;
+  box-shadow: 0 0 10px #2dd4bf;
 }
- 
+
+/* ---------- STATUS ---------- */
 td.pass {
-  color: #1eb154;
-  font-weight: 600;
+  color: #22c55e;
+  text-shadow: 0 0 6px rgba(34,197,94,0.5);
 }
 
 td.fail {
   color: #ef4444;
-  font-weight: 600;
-}
-
-/* Stats */
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 25px;
-}
- 
-.stats p {
-  padding: 10px 18px;       
-  border: 1px solid #94a3b8ce;
-  border-radius: 8px;
-  background: transparent;
-  color: #94a3b8;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-} 
-
-/* Hover */
-tr:hover {
-  background: #0f172a;
+  text-shadow: 0 0 6px rgba(239,68,68,0.5);
 }
